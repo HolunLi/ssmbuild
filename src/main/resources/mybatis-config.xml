@@ -9,8 +9,4 @@
         <package name="com.holun.entity" />
     </typeAliases>
 
-    <mappers>
-        <mapper resource="mapper/BookMapper.xml" />
-    </mappers>
-
 </configuration>

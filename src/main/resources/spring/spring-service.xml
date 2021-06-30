@@ -13,6 +13,11 @@
         <property name="bookMapper" ref="bookMapper" />
     </bean>
 
+    <!-- 注入UserServiceImpl的实例 -->
+    <bean id="userServiceImpl" class="com.holun.service.impl.UserServiceImpl" >
+        <property name="userMapper" ref="userMapper" />
+    </bean>
+
     <!-- 配置事务管理器，此处使用JDBC的事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />

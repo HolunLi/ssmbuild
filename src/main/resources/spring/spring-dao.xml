@@ -22,6 +22,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath:mapper/*.xml" />
     </bean>
 
     <!--使用MapperScannerConfigurer 扫描指定包中的mapper接口, 为包中的Mapper接口生成动态代理对象并注入到Spring容器 -->

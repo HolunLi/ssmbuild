@@ -53,7 +53,7 @@
             <mvc:mapping path="/**"/>
 
             <!--注入拦截器-->
-            <bean class="com.holun.interceptor.LoginCheckInterceptor"/>
+            <bean id="loginCheckInterceptor" class="com.holun.interceptor.LoginCheckInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

@@ -10,7 +10,7 @@
     <script type="text/javascript">
         function fun() {
             $.post(
-                "${pageContext.request.contextPath}/loginCheck",
+                "${pageContext.request.contextPath}/user/loginCheck",
                 
                 {
                     name:$("#user").val(),
@@ -18,13 +18,39 @@
                 },
 
                 function (data) {
-                    if (data === "true")
-                        document.getElementById("loginForm").submit();
-                    else
+                    if (data === "A") {
+                        $("#display").css("color", "red");
+                        $("#display").html("请输入用户名和密码!");
+                        return;
+                    }
+                    else if (data === "B")
                     {
                         $("#display").css("color", "red");
-                        $("#display").html("账号或密码错误!");
+                        $("#display").html("用户名为空!");
+                        return;
                     }
+                    else if (data === "C")
+                    {
+                        $("#display").css("color", "red");
+                        $("#display").html("密码为空!");
+                        return;
+                    }
+
+                    if (data === "a")
+                        window.location.href = "${pageContext.request.contextPath}/book/allBooks";
+                    else if (data === "b") {
+                        $("#display").css("color", "red");
+                        $("#display").html("用户名或密码错误!");
+                    }
+                    else if (data === "c") {
+                        $("#display").css("color", "red");
+                        $("#display").html("用户名有误!");
+                    }
+                    else {
+                        $("#display").css("color", "red");
+                        $("#display").html("密码有误!");
+                    }
+
                 }
             )
         }
@@ -34,19 +60,17 @@
 <body>
     <div id="login-box">
         <h1>Login</h1>
-        <form id="loginForm" action="${pageContext.request.contextPath}/toLoginPage" method="post" >
             <div class="input-box">
                 <i class="iconfont">&#xe609;</i>
 
-                <input type="text" id="user" name="username" placeholder="UserName" required />
+                <input type="text" id="user" name="username" placeholder="UserName"  />
             </div>
             <div class="input-box">
                 <i class="iconfont">&#xe605;</i>
-                <input type="password" id="password" placeholder="UserPassword" required />
+                <input type="password" id="password" placeholder="UserPassword"  />
             </div>
-        </form>
-        <button onclick="fun()" >Sign in</button><br><br>
-        <span id="display"></span>
+            <button onclick="fun()" >Sign in</button><br><br>
+            <span id="display"></span>
     </div>
 </body>
 </html>

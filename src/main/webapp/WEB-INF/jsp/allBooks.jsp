@@ -11,10 +11,19 @@
 
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <div class="page-header">
-                <h1>
-                    <small>书籍列表 —— 显示所有书籍</small>
-                </h1>
+            <div class="page-header" >
+                <table>
+                    <tr>
+                        <td style="width: 400px;" >
+                            <h1>
+                            <small>书籍列表 —— 显示所有书籍</small>
+                            </h1>
+                        </td>
+                        <td style="width: 900px;" align="right">
+                            <h1><a href="${pageContext.request.contextPath}/user/logout" style="font-size: 18px; text-decoration: none" >退出登录</a></h1>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

@@ -43,5 +43,18 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--/** 包括路径及其子路径-->
+            <!--/admin/* 拦截的是/admin/add等等这种 , /admin/add/user不会被拦截-->
+            <!--/admin/** 拦截的是/admin/下的所有-->
+            <mvc:mapping path="/**"/>
+
+            <!--注入拦截器-->
+            <bean class="com.holun.interceptor.LoginCheckInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>

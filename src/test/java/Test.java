@@ -18,6 +18,10 @@ public class Test {
         User user = new User("狂神", "123456");
         userService.selectUserByNameAndPwd(user);
         System.out.println(user);
+        System.out.println(userService.queryUserByName("狂神"));
+        List<String> list = userService.queryUserByPwd("xsxs");
+        System.out.println(list.size());
+        list.forEach(System.out :: println);
 
     }
 }

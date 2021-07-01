@@ -7,4 +7,13 @@
     <select id="selectUserByNameAndPwd" parameterType="user" resultType="user">
         select * from user where name=#{name} and pwd=#{pwd}
     </select>
+
+    <select id="queryUserByName" parameterType="string" resultType="string" >
+        select name from user where name = #{name}
+    </select>
+
+    <select id="queryUserByPwd" parameterType="string" resultType="string">
+        select pwd from user where pwd = #{pwd}
+    </select>
+
 </mapper>

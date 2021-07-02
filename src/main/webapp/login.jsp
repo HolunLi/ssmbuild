@@ -3,8 +3,8 @@
 <html>
 <head>
     <title>Sign in</title>
-    <link rel="stylesheet" type="text/css" href="static/css/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" >
+    <link rel="stylesheet" type="text/css" href="static/css/iconfont.css" >
     <script src="static/js/jquery-3.6.0.js" ></script>
 
     <script type="text/javascript">

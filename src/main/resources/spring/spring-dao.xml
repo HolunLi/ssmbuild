@@ -17,6 +17,15 @@
         <property name="jdbcUrl" value="${jdbcUrl}" />
         <property name="user" value="${user}" />
         <property name="password" value="${password}" />
+        <!-- c3p0连接池的私有属性 -->
+        <property name="maxPoolSize" value="30"/>
+        <property name="minPoolSize" value="10"/>
+        <!-- 关闭连接后不自动commit -->
+        <property name="autoCommitOnClose" value="false"/>
+        <!-- 获取连接超时时间 -->
+        <property name="checkoutTimeout" value="10000"/>
+        <!-- 当获取连接失败重试次数 -->
+        <property name="acquireRetryAttempts" value="2"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -38,6 +47,5 @@
     这种情况下,你可以使用sqlSessionFactoryBeanName或sqlSessionTemplateBeanName属性来设置正确的bean的名称
     来使用。注意bean的名称是必须的,而不是bean的引用,因此,value属性在这里替代通常的ref。
     -->
-
 
 </beans>
